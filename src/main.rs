@@ -2,7 +2,13 @@ use brainc::engine::Engine;
 
 fn main() {
     
-    let engine = Engine::create();
+    match Engine::create() {
+        Ok(engine) => {
+            println!("Project root: {}", engine.project_root());
+        },
+        Err(_) => {
+            println!("Can't find root.brain")
+        }
+    }
 
-    println!("Project root: {}", engine.project_root());
 }
