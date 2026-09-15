@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PROJECT_DIR="$PWD"
+DEST_DIR="$HOME/.config/brainc/bin"
+BIN_NAME="brainc"
+
+echo "Projeto: $PROJECT_DIR"
+echo "Destino: $DEST_DIR"
+
+cargo build --release
+
+mkdir -p "$DEST_DIR"
+
+cp "$PROJECT_DIR/target/release/$BIN_NAME" "$DEST_DIR/$BIN_NAME"
+
+echo "Instalado em: $DEST_DIR/$BIN_NAME"
+
