@@ -1,3 +1,8 @@
+use brainc::engine::Engine;
+
 fn main() {
-    println!("Hello, world!");
+    
+    let engine = Engine::create();
+
+    println!("Project root: {}", engine.project_root());
 }
